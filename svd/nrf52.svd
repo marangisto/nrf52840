@@ -41,22 +41,6 @@
   <size>32</size>
   <resetValue>0x00000000</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
-  <cpu>
-    <name>CM4</name>
-    <revision>r0p1</revision>
-    <endian>little</endian>
-    <mpuPresent>1</mpuPresent>
-    <fpuPresent>1</fpuPresent>
-    <nvicPrioBits>3</nvicPrioBits>
-    <vendorSystickConfig>0</vendorSystickConfig>
-  </cpu>
-  <headerSystemFilename>system_nrf52</headerSystemFilename>
-  <headerDefinitionsPrefix>NRF_</headerDefinitionsPrefix>
-  <vendorExtensions>
-    <ExampleStackSize>2048</ExampleStackSize>
-    <ExampleHeapSize>2048</ExampleHeapSize>
-    <MaxInterrupts>240</MaxInterrupts>
-  </vendorExtensions>
   <peripherals>
     <peripheral>
       <name>FICR</name>
@@ -223,7 +207,6 @@
         <cluster>
           <name>INFO</name>
           <description>Device info</description>
-          <headerStructName>FICR_INFO</headerStructName>
           <addressOffset>0x100</addressOffset>
           <register>
             <name>PART</name>
@@ -433,7 +416,6 @@
         <cluster>
           <name>NFC</name>
           <description>Unspecified</description>
-          <headerStructName>FICR_NFC</headerStructName>
           <addressOffset>0x450</addressOffset>
           <register>
             <name>TAGHEADER0</name>
@@ -3141,7 +3123,6 @@
       <groupName>POWER</groupName>
       <baseAddress>0x40000000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>BPROT</alternatePeripheral>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -3910,7 +3891,6 @@
           <dimIndex>0-7</dimIndex>
           <name>RAM[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>POWER_RAM</headerStructName>
           <addressOffset>0x900</addressOffset>
           <register>
             <name>POWER</name>
@@ -4124,7 +4104,6 @@
       <groupName>CLOCK</groupName>
       <baseAddress>0x40000000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>BPROT</alternatePeripheral>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -6721,7 +6700,6 @@
       <groupName>UARTE</groupName>
       <baseAddress>0x40002000</baseAddress>
       <size>32</size>
-      <headerStructName>UARTE</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -7646,7 +7624,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>UARTE_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>RTS</name>
@@ -7881,7 +7858,6 @@
         <cluster>
           <name>RXD</name>
           <description>RXD EasyDMA channel</description>
-          <headerStructName>UARTE_RXD</headerStructName>
           <addressOffset>0x534</addressOffset>
           <register>
             <name>PTR</name>
@@ -7929,7 +7905,6 @@
         <cluster>
           <name>TXD</name>
           <description>TXD EasyDMA channel</description>
-          <headerStructName>UARTE_TXD</headerStructName>
           <addressOffset>0x544</addressOffset>
           <register>
             <name>PTR</name>
@@ -8026,7 +8001,6 @@
       <groupName>SPIM</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <headerStructName>SPIM</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -8432,7 +8406,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>SPIM_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>SCK</name>
@@ -8589,7 +8562,6 @@
         <cluster>
           <name>RXD</name>
           <description>RXD EasyDMA channel</description>
-          <headerStructName>SPIM_RXD</headerStructName>
           <addressOffset>0x534</addressOffset>
           <register>
             <name>PTR</name>
@@ -8663,7 +8635,6 @@
         <cluster>
           <name>TXD</name>
           <description>TXD EasyDMA channel</description>
-          <headerStructName>SPIM_TXD</headerStructName>
           <addressOffset>0x544</addressOffset>
           <register>
             <name>PTR</name>
@@ -8818,8 +8789,6 @@
       <groupName>SPIS</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM0</alternatePeripheral>
-      <headerStructName>SPIS</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -9132,7 +9101,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>SPIS_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>SCK</name>
@@ -9270,7 +9238,6 @@
         <cluster>
           <name>RXD</name>
           <description>Unspecified</description>
-          <headerStructName>SPIS_RXD</headerStructName>
           <addressOffset>0x534</addressOffset>
           <register>
             <name>PTR</name>
@@ -9318,7 +9285,6 @@
         <cluster>
           <name>TXD</name>
           <description>Unspecified</description>
-          <headerStructName>SPIS_TXD</headerStructName>
           <addressOffset>0x544</addressOffset>
           <register>
             <name>PTR</name>
@@ -9461,8 +9427,6 @@
       <groupName>TWIM</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM0</alternatePeripheral>
-      <headerStructName>TWIM</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -10166,7 +10130,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>TWIM_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>SCL</name>
@@ -10270,7 +10233,6 @@
         <cluster>
           <name>RXD</name>
           <description>RXD EasyDMA channel</description>
-          <headerStructName>TWIM_RXD</headerStructName>
           <addressOffset>0x534</addressOffset>
           <register>
             <name>PTR</name>
@@ -10344,7 +10306,6 @@
         <cluster>
           <name>TXD</name>
           <description>TXD EasyDMA channel</description>
-          <headerStructName>TWIM_TXD</headerStructName>
           <addressOffset>0x544</addressOffset>
           <register>
             <name>PTR</name>
@@ -10437,8 +10398,6 @@
       <groupName>TWIS</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM0</alternatePeripheral>
-      <headerStructName>TWIS</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -11121,7 +11080,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>TWIS_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>SCL</name>
@@ -11193,7 +11151,6 @@
         <cluster>
           <name>RXD</name>
           <description>RXD EasyDMA channel</description>
-          <headerStructName>TWIS_RXD</headerStructName>
           <addressOffset>0x534</addressOffset>
           <register>
             <name>PTR</name>
@@ -11241,7 +11198,6 @@
         <cluster>
           <name>TXD</name>
           <description>TXD EasyDMA channel</description>
-          <headerStructName>TWIS_TXD</headerStructName>
           <addressOffset>0x544</addressOffset>
           <register>
             <name>PTR</name>
@@ -11370,8 +11326,6 @@
       <groupName>SPI</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM0</alternatePeripheral>
-      <headerStructName>SPI</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -11487,7 +11441,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>SPI_PSEL</headerStructName>
           <addressOffset>0x508</addressOffset>
           <register>
             <name>SCK</name>
@@ -11706,8 +11659,6 @@
       <groupName>TWI</groupName>
       <baseAddress>0x40003000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM0</alternatePeripheral>
-      <headerStructName>TWI</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -12397,7 +12348,6 @@
       <groupName>SPIS</groupName>
       <baseAddress>0x40004000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM1</alternatePeripheral>
       <interrupt>
         <name>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1</name>
         <value>4</value>
@@ -12409,7 +12359,6 @@
       <groupName>TWIM</groupName>
       <baseAddress>0x40004000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM1</alternatePeripheral>
       <interrupt>
         <name>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1</name>
         <value>4</value>
@@ -12421,7 +12370,6 @@
       <groupName>TWIS</groupName>
       <baseAddress>0x40004000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM1</alternatePeripheral>
       <interrupt>
         <name>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1</name>
         <value>4</value>
@@ -12433,7 +12381,6 @@
       <groupName>SPI</groupName>
       <baseAddress>0x40004000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM1</alternatePeripheral>
       <interrupt>
         <name>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1</name>
         <value>4</value>
@@ -13777,7 +13724,6 @@
         <cluster>
           <name>FRAMESTATUS</name>
           <description>Unspecified</description>
-          <headerStructName>NFCT_FRAMESTATUS</headerStructName>
           <addressOffset>0x40C</addressOffset>
           <register>
             <name>RX</name>
@@ -14000,7 +13946,6 @@
         <cluster>
           <name>TXD</name>
           <description>Unspecified</description>
-          <headerStructName>NFCT_TXD</headerStructName>
           <addressOffset>0x518</addressOffset>
           <register>
             <name>FRAMECONFIG</name>
@@ -14107,7 +14052,6 @@
         <cluster>
           <name>RXD</name>
           <description>Unspecified</description>
-          <headerStructName>NFCT_RXD</headerStructName>
           <addressOffset>0x520</addressOffset>
           <register>
             <name>FRAMECONFIG</name>
@@ -15193,7 +15137,6 @@
           <dimIndex>0-7</dimIndex>
           <name>EVENTS_CH[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>SAADC_EVENTS_CH</headerStructName>
           <addressOffset>0x118</addressOffset>
           <register>
             <name>LIMITH</name>
@@ -16874,7 +16817,6 @@
           <dimIndex>0-7</dimIndex>
           <name>CH[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>SAADC_CH</headerStructName>
           <addressOffset>0x510</addressOffset>
           <register>
             <name>PSELP</name>
@@ -17352,7 +17294,6 @@
         <cluster>
           <name>RESULT</name>
           <description>RESULT EasyDMA channel</description>
-          <headerStructName>SAADC_RESULT</headerStructName>
           <addressOffset>0x62C</addressOffset>
           <register>
             <name>PTR</name>
@@ -17405,7 +17346,6 @@
       <groupName>TIMER</groupName>
       <baseAddress>0x40008000</baseAddress>
       <size>32</size>
-      <headerStructName>TIMER</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -18157,7 +18097,6 @@
       <groupName>RTC</groupName>
       <baseAddress>0x4000B000</baseAddress>
       <size>32</size>
-      <headerStructName>RTC</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -19964,7 +19903,6 @@
       <groupName>AAR</groupName>
       <baseAddress>0x4000F000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>CCM</alternatePeripheral>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -21537,7 +21475,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>QDEC_PSEL</headerStructName>
           <addressOffset>0x51C</addressOffset>
           <register>
             <name>LED</name>
@@ -22493,7 +22430,6 @@
       <groupName>LPCOMP</groupName>
       <baseAddress>0x40013000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>COMP</alternatePeripheral>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -23171,7 +23107,6 @@
       <groupName>SWI</groupName>
       <baseAddress>0x40014000</baseAddress>
       <size>32</size>
-      <headerStructName>SWI</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -23187,7 +23122,6 @@
           <description>Unused.</description>
           <addressOffset>0x000</addressOffset>
           <resetValue>0x00000000</resetValue>
-          <access>read-only</access>
         </register>
       </registers>
     </peripheral>
@@ -23197,8 +23131,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40014000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI0</alternatePeripheral>
-      <headerStructName>EGU</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -24422,7 +24354,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40015000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI1</alternatePeripheral>
       <interrupt>
         <name>SWI1_EGU1</name>
         <value>21</value>
@@ -24445,7 +24376,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40016000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI2</alternatePeripheral>
       <interrupt>
         <name>SWI2_EGU2</name>
         <value>22</value>
@@ -24468,7 +24398,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40017000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI3</alternatePeripheral>
       <interrupt>
         <name>SWI3_EGU3</name>
         <value>23</value>
@@ -24491,7 +24420,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40018000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI4</alternatePeripheral>
       <interrupt>
         <name>SWI4_EGU4</name>
         <value>24</value>
@@ -24514,7 +24442,6 @@
       <groupName>EGU</groupName>
       <baseAddress>0x40019000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SWI5</alternatePeripheral>
       <interrupt>
         <name>SWI5_EGU5</name>
         <value>25</value>
@@ -24548,7 +24475,6 @@
       <groupName>PWM</groupName>
       <baseAddress>0x4001C000</baseAddress>
       <size>32</size>
-      <headerStructName>PWM</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -25451,7 +25377,6 @@
           <dimIndex>0-1</dimIndex>
           <name>SEQ[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>PWM_SEQ</headerStructName>
           <addressOffset>0x520</addressOffset>
           <register>
             <name>PTR</name>
@@ -25531,7 +25456,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>PWM_PSEL</headerStructName>
           <addressOffset>0x560</addressOffset>
           <register>
             <dim>4</dim>
@@ -26029,7 +25953,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>PDM_PSEL</headerStructName>
           <addressOffset>0x540</addressOffset>
           <register>
             <name>CLK</name>
@@ -26101,7 +26024,6 @@
         <cluster>
           <name>SAMPLE</name>
           <description>Unspecified</description>
-          <headerStructName>PDM_SAMPLE</headerStructName>
           <addressOffset>0x560</addressOffset>
           <register>
             <name>PTR</name>
@@ -26222,7 +26144,6 @@
           <description>Deprecated register -  Register for erasing a page in Code area. Equivalent to ERASEPAGE.</description>
           <addressOffset>0x508</addressOffset>
           <access>read-write</access>
-          <alternateRegister>ERASEPAGE</alternateRegister>
           <fields>
             <field>
               <name>ERASEPCR1</name>
@@ -26391,7 +26312,6 @@
           <dimIndex>0-5</dimIndex>
           <name>TASKS_CHG[%s]</name>
           <description>Channel group tasks</description>
-          <headerStructName>PPI_TASKS_CHG</headerStructName>
           <addressOffset>0x000</addressOffset>
           <register>
             <name>EN</name>
@@ -28742,7 +28662,6 @@
           <dimIndex>0-19</dimIndex>
           <name>CH[%s]</name>
           <description>PPI Channel</description>
-          <headerStructName>PPI_CH</headerStructName>
           <addressOffset>0x510</addressOffset>
           <register>
             <name>EEP</name>
@@ -29366,7 +29285,6 @@
           <dimIndex>0-31</dimIndex>
           <name>FORK[%s]</name>
           <description>Fork</description>
-          <headerStructName>PPI_FORK</headerStructName>
           <addressOffset>0x910</addressOffset>
           <register>
             <name>TEP</name>
@@ -29407,7 +29325,6 @@
           <dimIndex>0-3</dimIndex>
           <name>EVENTS_REGION[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>MWU_EVENTS_REGION</headerStructName>
           <addressOffset>0x100</addressOffset>
           <register>
             <name>WA</name>
@@ -29428,7 +29345,6 @@
           <dimIndex>0-1</dimIndex>
           <name>EVENTS_PREGION[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>MWU_EVENTS_PREGION</headerStructName>
           <addressOffset>0x160</addressOffset>
           <register>
             <name>WA</name>
@@ -31225,7 +31141,6 @@
           <dimIndex>0-1</dimIndex>
           <name>PERREGION[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>MWU_PERREGION</headerStructName>
           <addressOffset>0x400</addressOffset>
           <register>
             <name>SUBSTATWA</name>
@@ -33292,7 +33207,6 @@
           <dimIndex>0-3</dimIndex>
           <name>REGION[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>MWU_REGION</headerStructName>
           <addressOffset>0x600</addressOffset>
           <register>
             <name>START</name>
@@ -33337,7 +33251,6 @@
           <dimIndex>0-1</dimIndex>
           <name>PREGION[%s]</name>
           <description>Unspecified</description>
-          <headerStructName>MWU_PREGION</headerStructName>
           <addressOffset>0x6C0</addressOffset>
           <register>
             <name>START</name>
@@ -33994,7 +33907,6 @@
       <groupName>SPIS</groupName>
       <baseAddress>0x40023000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM2</alternatePeripheral>
       <interrupt>
         <name>SPIM2_SPIS2_SPI2</name>
         <value>35</value>
@@ -34006,7 +33918,6 @@
       <groupName>SPI</groupName>
       <baseAddress>0x40023000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM2</alternatePeripheral>
       <interrupt>
         <name>SPIM2_SPIS2_SPI2</name>
         <value>35</value>
@@ -34339,7 +34250,6 @@
         <cluster>
           <name>CONFIG</name>
           <description>Unspecified</description>
-          <headerStructName>I2S_CONFIG</headerStructName>
           <addressOffset>0x504</addressOffset>
           <register>
             <name>MODE</name>
@@ -34730,7 +34640,6 @@
         <cluster>
           <name>RXD</name>
           <description>Unspecified</description>
-          <headerStructName>I2S_RXD</headerStructName>
           <addressOffset>0x538</addressOffset>
           <register>
             <name>PTR</name>
@@ -34751,7 +34660,6 @@
         <cluster>
           <name>TXD</name>
           <description>Unspecified</description>
-          <headerStructName>I2S_TXD</headerStructName>
           <addressOffset>0x540</addressOffset>
           <register>
             <name>PTR</name>
@@ -34772,7 +34680,6 @@
         <cluster>
           <name>RXTXD</name>
           <description>Unspecified</description>
-          <headerStructName>I2S_RXTXD</headerStructName>
           <addressOffset>0x550</addressOffset>
           <register>
             <name>MAXCNT</name>
@@ -34793,7 +34700,6 @@
         <cluster>
           <name>PSEL</name>
           <description>Unspecified</description>
-          <headerStructName>I2S_PSEL</headerStructName>
           <addressOffset>0x560</addressOffset>
           <register>
             <name>MCK</name>
@@ -34969,7 +34875,6 @@
       <groupName>GPIO</groupName>
       <baseAddress>0x50000000</baseAddress>
       <size>32</size>
-      <headerStructName>GPIO</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
@@ -40410,7 +40315,6 @@
       <groupName>TWI</groupName>
       <baseAddress>0x40004000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>SPIM1</alternatePeripheral>
       <interrupt>
         <name>SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1</name>
         <value>4</value>
@@ -40422,8 +40326,6 @@
       <groupName>UART</groupName>
       <baseAddress>0x40002000</baseAddress>
       <size>32</size>
-      <alternatePeripheral>UARTE0</alternatePeripheral>
-      <headerStructName>UART</headerStructName>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
